@@ -1,15 +1,13 @@
-/* platinum = #E5E6E4
-*/
 /* Reset default margin and padding */
 * {
   padding: 0;
   margin: 0;
 }
 /* Set background-color */
-/* body {
+body {
   height: 100vh;
   background-color: #545863;
-} */
+}
 
 .container {
   display: flex;
@@ -20,14 +18,22 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(8, 10px);
-  grid-template-rows: repeat(8, 10px);
+  grid-template-columns: repeat(
+    8,
+    1fr
+  ); /* Change width units to fractional units */
+  grid-template-rows: repeat(
+    8,
+    1fr
+  ); /* Change height units to fractional units */
   gap: 1px;
-  border: 2px solid blue;
+  border: 5px solid #e5e6e4;
+  width: 600px;
+  height: 600px;
 }
 
 .grid-item {
   background-color: red;
-  width: 10px;
-  height: 10px;
+  width: 100%; /* Use percentage to fill parent container */
+  height: 100%; /* Use percentage to fill parent container */
 }
