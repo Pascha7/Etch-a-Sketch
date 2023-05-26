@@ -6,20 +6,28 @@
   margin: 0;
 }
 /* Set background-color */
-body {
+/* body {
   height: 100vh;
   background-color: #545863;
-}
+} */
 
-.sketch-container {
-  height: 100%;
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-.sketch-frame {
-  width: 700px;
-  height: 700px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 10px);
+  grid-template-rows: repeat(8, 10px);
+  gap: 1px;
+  border: 2px solid blue;
+}
+
+.grid-item {
   background-color: red;
+  width: 10px;
+  height: 10px;
 }
