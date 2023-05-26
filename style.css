@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
 }
+
 /* Set background-color */
 body {
   height: 100vh;
@@ -18,14 +19,8 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(
-    8,
-    1fr
-  ); /* Change width units to fractional units */
-  grid-template-rows: repeat(
-    8,
-    1fr
-  ); /* Change height units to fractional units */
+  grid-template-columns: repeat(8, 1fr); /* Define 8 columns with equal width */
+  grid-template-rows: repeat(8, 1fr); /* Define 8 rows with equal height */
   gap: 1px;
   border: 5px solid #e5e6e4;
   width: 600px;
@@ -34,6 +29,6 @@ body {
 
 .grid-item {
   background-color: red;
-  width: 100%; /* Use percentage to fill parent container */
-  height: 100%; /* Use percentage to fill parent container */
+  width: 100%; /* Fill the width of the parent container */
+  height: 100%; /* Fill the height of the parent container */
 }
