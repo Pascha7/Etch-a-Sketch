@@ -1,6 +1,6 @@
 let isMouseDown = false; // Track the mouse button state
 let gridNum = 16; // Defines the number of grid squares
-let selectedColor = "#fff"; // Defines the color selected with color picker
+let selectedColor = "black"; // Defines the color selected with color picker
 
 // Select the grid container element
 const gridContainer = document.querySelector(".grid");
@@ -21,14 +21,14 @@ squares.forEach((square) => {
   // Event listener for when the mouse button is pressed down on a square
   square.addEventListener(`mousedown`, () => {
     isMouseDown = true; // Set the mouse button state to down
-    square.style.backgroundColor = "blue"; // Change the color of the square to blue
+    square.style.backgroundColor = `${selectedColor}`; // Change the color of the square to blue
   });
 
   // Event listener for when the mouse is moved over a square
   square.addEventListener(`mousemove`, () => {
     if (isMouseDown) {
       // If the mouse button is held down, change the color of the square to blue
-      square.style.backgroundColor = "blue";
+      square.style.backgroundColor = `${selectedColor}`;
     }
   });
 
@@ -49,8 +49,9 @@ resetBtn.onclick = function () {
 };
 
 // Select the colorPicker element
-// const colorPicker = document.getElementById(`colorPicker`);
-// colorPicker.addEventListener(`input`, function(e) => {
-//     selectedColor = e.target.value;
-
-// })
+const colorPicker = document.getElementById(`colorPicker`);
+// Changes pen color
+colorPicker.addEventListener(`input`, function (e) {
+  // Assigns the new color
+  selectedColor = e.target.value;
+});
