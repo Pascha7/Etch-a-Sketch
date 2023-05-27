@@ -55,3 +55,10 @@ colorPicker.addEventListener(`input`, function (e) {
   // Assigns the new color
   selectedColor = e.target.value;
 });
+
+const slider = document.getElementById(`slider`);
+const sliderValue = document.getElementById(`sliderValue`);
+slider.addEventListener(`input`, function (e) {
+  let value = e.target.value;
+  sliderValue.textContent = value;
+});
