@@ -1,10 +1,13 @@
+let isMouseDown = false; // Track the mouse button state
+let gridNum = 16; // Defines the number of grid squares
+let selectedColor = "#fff"; // Defines the color selected with color picker
+
 // Select the grid container element
 const gridContainer = document.querySelector(".grid");
-let isMouseDown = false; // Track the mouse button state
 
 // Create the grid of squares
-for (let i = 0; i < 8; i++) {
-  for (let j = 0; j < 8; j++) {
+for (let i = 0; i < gridNum; i++) {
+  for (let j = 0; j < gridNum; j++) {
     // Create a square element
     const gridItem = document.createElement("div");
     gridItem.classList.add("grid-item");
@@ -34,3 +37,20 @@ squares.forEach((square) => {
     isMouseDown = false; // Reset the mouse button state to up
   });
 });
+
+// Select the resetBtn element
+const resetBtn = document.getElementById(`resetBtn`);
+// Resets the whole grid to white
+resetBtn.onclick = function () {
+  // Accesses all the square elements
+  squares.forEach((square) => {
+    square.style.backgroundColor = "#fff";
+  });
+};
+
+// Select the colorPicker element
+// const colorPicker = document.getElementById(`colorPicker`);
+// colorPicker.addEventListener(`input`, function(e) => {
+//     selectedColor = e.target.value;
+
+// })

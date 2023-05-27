@@ -19,8 +19,11 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr); /* Define 8 columns with equal width */
-  grid-template-rows: repeat(8, 1fr); /* Define 8 rows with equal height */
+  grid-template-columns: repeat(
+    16,
+    1fr
+  ); /* Define 8 columns with equal width */
+  grid-template-rows: repeat(16, 1fr); /* Define 8 rows with equal height */
   gap: 1px;
   border: 5px solid #e5e6e4;
   width: 600px;
@@ -28,7 +31,7 @@ body {
 }
 
 .grid-item {
-  background-color: red;
+  background-color: #fff;
   width: 100%; /* Fill the width of the parent container */
   height: 100%; /* Fill the height of the parent container */
 }
