@@ -93,6 +93,8 @@ const sliderValue = document.getElementById(`sliderValue`);
 slider.addEventListener(`input`, function (e) {
   let value = +e.target.value;
   sliderValue.textContent = value;
+  //
+  sliderValue.innerHTML = `<span>${value}</span> x <span>${value}</span>`;
   gridNum = value;
   createGrid();
   gridContainer.style.gridTemplateColumns = `repeat(${value}, 1fr)`;

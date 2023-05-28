@@ -6,31 +6,64 @@
 
 /* Set background-color */
 body {
-  height: 100vh;
   background-color: #545863;
+  height: 100vh;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(
-    16,
-    1fr
-  ); /* Define 16 columns with equal width */
-  grid-template-rows: repeat(16, 1fr); /* Define 8 rows with equal height */
-  border: 5px solid #e5e6e4;
+  /* Define 16 columns with equal width */
+  grid-template-columns: repeat(16, 1fr);
+  /* Define 16 rows with equal height */
+  grid-template-rows: repeat(16, 1fr);
   width: 600px;
   height: 600px;
+  box-shadow: 1px 1px 15px red;
 }
 
 .grid-item {
-  background-color: #fff;
   width: 100%; /* Fill the width of the parent container */
   height: 100%; /* Fill the height of the parent container */
+  background-color: #fff;
+}
+/* Positioned button container over sketch */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 500px;
+  margin-bottom: 50px;
+}
+/* Base button style */
+#colorPicker,
+#resetBtn,
+#rainbowBtn {
+  width: 100px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+/* Header for webpage */
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+/* Adjusts the size of slider value as well
+as positioning it right */
+.slider-Container {
+  margin-top: 20px;
+}
+
+#slider,
+#sliderValue {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
 }
