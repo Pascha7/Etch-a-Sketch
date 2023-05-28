@@ -36,6 +36,29 @@ function createGrid() {
       gridItem.addEventListener(`mouseup`, () => {
         isMouseDown = false; // Reset the mouse button state to up
       });
+
+      // Rainbow color mode
+      let rainbowMode = false;
+      const rainbowBtn = document.getElementById(`rainbowBtn`);
+
+      // Event listener for when the rainbow button is clicked
+      rainbowBtn.addEventListener(`mousedown`, function () {
+        rainbowMode = true;
+        selectedColor = getRandomRainbowColor();
+      });
+
+      // Event listener for when the mouse is moved over the grid
+      gridContainer.addEventListener(`mousemove`, function () {
+        if (rainbowMode) {
+          selectedColor = getRandomRainbowColor();
+        }
+      });
+
+      // Function to get a random color from the rainbowColors array
+      function getRandomRainbowColor() {
+        const index = Math.floor(Math.random() * rainbowColors.length);
+        return rainbowColors[index];
+      }
     }
   }
 }
@@ -72,3 +95,13 @@ slider.addEventListener(`input`, function (e) {
   gridContainer.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
   gridContainer.style.gridTemplateRows = `repeat(${value}, 1fr)`;
 });
+
+const rainbowColors = [
+  "#ff0000", // Red
+  "#ff7f00", // Orange
+  "#ffff00", // Yellow
+  "#00ff00", // Green
+  "#0000ff", // Blue
+  "#4b0082", // Indigo
+  "#9400d3", // Violet
+];
