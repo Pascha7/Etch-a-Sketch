@@ -45,13 +45,11 @@ createGrid();
 
 // Select the resetBtn element
 const resetBtn = document.getElementById(`resetBtn`);
-// Resets the whole grid to white
-resetBtn.onclick = function () {
-  // Accesses all the square elements
-  squares.forEach((square) => {
-    square.style.backgroundColor = "#fff";
-  });
-};
+// Resets the grid
+resetBtn.addEventListener(`click`, function () {
+  // creates the new grid
+  createGrid();
+});
 
 // Select the colorPicker element
 const colorPicker = document.getElementById(`colorPicker`);
