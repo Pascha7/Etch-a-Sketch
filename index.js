@@ -1,6 +1,7 @@
 let isMouseDown = false; // Track the mouse button state
 let gridNum = 16; // Defines the number of grid squares
 let selectedColor = "black"; // Defines the color selected with color picker
+let rainbowMode = false; // Enables rainbowMode
 
 // Select the grid container element
 const gridContainer = document.querySelector(".grid");
@@ -38,7 +39,7 @@ function createGrid() {
       });
 
       // Rainbow color mode
-      let rainbowMode = false;
+
       const rainbowBtn = document.getElementById(`rainbowBtn`);
 
       // Event listener for when the rainbow button is clicked
@@ -80,6 +81,8 @@ const colorPicker = document.getElementById(`colorPicker`);
 colorPicker.addEventListener(`input`, function (e) {
   // Assigns the new color
   selectedColor = e.target.value;
+  // Disables rainbowMode if selecting color
+  rainbowMode = false;
 });
 
 // Selects the slider
