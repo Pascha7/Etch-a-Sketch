@@ -8,6 +8,9 @@
 body {
   background-color: #545863;
   height: 100vh;
+  color: #fff;
+  font-family: "Russo One", sans-serif;
+  letter-spacing: 2px;
 }
 
 .container {
@@ -23,7 +26,7 @@ body {
   grid-template-rows: repeat(16, 1fr);
   width: 600px;
   height: 600px;
-  box-shadow: 1px 1px 15px red;
+  box-shadow: 0px 0px 20px #ff2400;
 }
 
 .grid-item {
@@ -45,25 +48,82 @@ body {
 #resetBtn,
 #rainbowBtn {
   width: 100px;
-  padding: 10px;
-  background-color: #f5f5f5;
+  background-color: black;
+  color: #fff;
+  font-family: "Russo One", sans-serif;
+  border: none;
+  font-size: 20px;
+  box-sizing: content-box;
+  height: 70px;
+  cursor: pointer;
+  transition: width 0.3s, height 0.3s; /* Adding transitions for width and height */
 }
+
+#colorPicker:hover,
+#resetBtn:hover,
+#rainbowBtn:hover {
+  width: 110px; /* Increase width on hover */
+  height: 75px; /* Increase height on hover */
+}
+
+#colorPicker:active,
+#resetBtn:active,
+#rainbowBtn:active {
+  width: 90px; /* Decrease width on click */
+  height: 65px; /* Decrease height on click */
+}
+
+#colorPicker {
+  padding: 0;
+  background-color: white;
+}
+
 /* Header for webpage */
 h1 {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 50px;
+  font-size: 3rem;
+  text-shadow: 7px 7px black;
 }
+
 /* Adjusts the size of slider value as well
 as positioning it right */
 .slider-Container {
-  margin-top: 20px;
+  width: 300px;
+  margin: 20px auto;
 }
 
-#slider,
 #sliderValue {
   display: block;
-  width: 300px;
-  margin: 0 auto;
   text-align: center;
+}
+
+#slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  background-color: #ff2400;
+
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 0 0 #ff2400;
+  transition: 0.3s ease-in-out;
+}
+
+#slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 7px #ff2400;
+}
+
+#slider::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px #ff2400;
 }
