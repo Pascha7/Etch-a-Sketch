@@ -47,16 +47,24 @@ body {
 #colorPicker,
 #resetBtn,
 #rainbowBtn {
+  /* Box model properties */
   width: 100px;
-  background-color: black;
+  height: 70px;
+  box-sizing: content-box;
+
+  /* Background and text properties */
+  background-color: #ff2400;
   color: #fff;
   font-family: "Russo One", sans-serif;
-  border: none;
   font-size: 20px;
-  box-sizing: content-box;
-  height: 70px;
+
+  /* Border and other visual properties */
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: width 0.3s, height 0.3s; /* Adding transitions for width and height */
+
+  /* Transitions */
+  transition: width 0.3s, height 0.3s;
 }
 
 #colorPicker:hover,
@@ -126,4 +134,14 @@ as positioning it right */
 
 #slider::-webkit-slider-thumb {
   box-shadow: 0 0 0 3px #ff2400;
+}
+
+div {
+  text-align: center;
+}
+
+div > a {
+  border: none;
+  color: #ff2400;
+  text-decoration: none;
 }
